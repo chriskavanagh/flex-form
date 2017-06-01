@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <title>Bootstrap 4 Flex Form</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    
+    <style>
+        .row{min-height:40vh;}
+        .header-text{font-size:2.8vw;}
+        
+        <!-- Media Queries -->
+        @media screen and (min-width: 350px) and (max-width: 760px){
+            .header-text{font-size: 5.9vw;}
+        }
+        
+        @media screen and (min-width: 760px) and (max-width: 980px){
+            .header-text{font-size: 4.2vw;}
+        }
+        
+        @media screen and (min-width: 442px) and (max-width: 576px){
+            #mybut{margin-bottom: 15px;}
+        }
+        
+        @media screen and (max-width: 474px){
+            h3{font-size: 5.5vw;margin-bottom:60px;margin-top:20px;}
+            .form-inline{display: block;}            
+        }        
+    </style>
+</head>
+
+
+
+<div class="wrapper">
+    <div class="container-fluid">
+        <div class="row" style="background-color: gray;">
+            <div class="col-lg d-flex justify-content-center align-items-center">
+                <h1 class="header-text">Sign-Up For Our Newsletter Today!</h1>    
+            </div>
+            <div class="col-lg d-flex justify-content-center align-items-center">
+                <form action="." class="form-inline">
+                    <div class="form-group">
+                        <input type="text" class="form-control form-control-lg"/>
+                    </div>
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-primary btn-lg hidden-xs-down" id="mybut">Primary</button>
+                        <button type="button" class="btn btn-primary btn-lg btn-block hidden-sm-up" id="mybut">Email</button>                        
+                    </span>
+                </div>
+            </form>    
+        </div>
+    </div>
+</div>
+        
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+</html>
+
+
+<!-- Using jQuery to change button class to btn-block -->
+
+$(function(){
+    $('#mybut').click(function(){
+            $('form').css({'display':'block'});
+            $('btn btn-primary btn-lg').toggleClass("btn btn-primary btn-lg btn-block");
+        });
+});//end $(function)
